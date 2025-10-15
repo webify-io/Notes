@@ -18,3 +18,14 @@ rd -Force -Recurse node_modules
 rd -Force -Recurse apps/*/node_modules
 rd -Force -Recurse packages/*/node_modules
 del pnpm-lock.yaml
+
+
+# Clean the project
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue node_modules
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue apps/*/node_modules
+Remove-Item -Recurse -Force -ErrorAction SilentlyContinue packages/*/node_modules
+Remove-Item -Force -ErrorAction SilentlyContinue pnpm-lock.yaml
+
+# Fresh install and build
+pnpm install
+pnpm build
