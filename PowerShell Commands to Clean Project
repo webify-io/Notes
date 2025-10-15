@@ -1,0 +1,13 @@
+# Remove node_modules directories
+Remove-Item -Force -Recurse -ErrorAction SilentlyContinue node_modules
+Remove-Item -Force -Recurse -ErrorAction SilentlyContinue apps/*/node_modules
+Remove-Item -Force -Recurse -ErrorAction SilentlyContinue packages/*/node_modules
+
+# Remove lock file
+Remove-Item -Force -ErrorAction SilentlyContinue pnpm-lock.yaml
+
+# Fresh install
+pnpm install
+
+# Build
+pnpm build
