@@ -45,4 +45,10 @@ Step 3: Force Push (if you want to update GitHub)
 If you want your GitHub repo to reflect this rollback:
 git push origin main --force
 
+# Confirm files presence in Project
+From PowerShell, run this at the root:
+Get-ChildItem -Recurse -Filter ".env"
+
+
+
 
