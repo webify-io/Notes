@@ -29,3 +29,20 @@ Remove-Item -Force -ErrorAction SilentlyContinue pnpm-lock.yaml
 # Fresh install and build
 pnpm install
 pnpm build
+
+
+# Git: Roll Back commits Using Git CLI (Recommended for Precision)
+Step 1: Find Your Initial Commit
+In your terminal at the root of your repo:
+git log --oneline
+
+Look for the very first commit — it should be at the bottom of the list. Copy its hash (e.g., a1b2c3d).
+✅ Step 2: Reset to That Commit
+To hard reset your working directory to that commit:
+git reset --hard <commit-hash>
+
+Step 3: Force Push (if you want to update GitHub)
+If you want your GitHub repo to reflect this rollback:
+git push origin main --force
+
+
