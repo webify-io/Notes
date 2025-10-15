@@ -11,3 +11,10 @@ pnpm install
 
 # Build
 pnpm build
+
+
+#Alternatively, you can use a shorter syntax with aliases:
+rd -Force -Recurse node_modules
+rd -Force -Recurse apps/*/node_modules
+rd -Force -Recurse packages/*/node_modules
+del pnpm-lock.yaml
